@@ -72,7 +72,9 @@ how to credit us are in [NOTICE.md](NOTICE.md).
 ## Where to go for the full, current picture
 
 The advisory is the source for everything here and may be updated. For its complete tables, its list of exploited
-flaws and its mitigations, follow the link in [CREDITS.md](CREDITS.md).
+flaws and its mitigations, follow the link in [CREDITS.md](CREDITS.md). Near the top of that page the agencies also
+offer the indicators as machine-readable STIX files (XML and JSON). If you load indicators into a security tool, take
+them from there, because that is the agencies' own copy.
 
 ## Help with a suspected compromise
 

@@ -29,9 +29,9 @@ on the SOC-Lite blog. It gives four questions to put to your IT person or provid
 
 **Rows:** 44 · **verified (two or more sources):** 0 · **single source:** 44
 
-These counts match [`iocs/iocs.csv`](iocs/iocs.csv); a test checks them every time we change the file. Every value
-was read on the advisory's own page. One source means no row is verified yet. The full list of what we took, and the
-exact wording, is in [CREDITS.md](CREDITS.md).
+These counts match [`iocs/iocs.csv`](iocs/iocs.csv); we check them every time we change the file
+(a test checks them in our private working copy). Every value was read on the advisory's own page. One source means no row is verified yet. What we took, and where it came from, is
+in [CREDITS.md](CREDITS.md).
 
 ### Copied into `iocs.csv` (indicator values, with credit)
 
@@ -46,8 +46,9 @@ exact wording, is in [CREDITS.md](CREDITS.md).
 |---|---|---|---|
 | **The advisory itself** | Machine-readable STIX files of the indicators, the list of exploited flaws, a mapping of the group's methods, and mitigations | It is the agencies' own, current copy. If you load indicators into a security tool, take them from there | https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a |
 
-Everyday tools the advisory lists (such as WinRAR, AnyDesk and PsExec) are described in words in the hunt guide, not
-listed as rows, because they are legitimate and common.
+Everyday tools the advisory lists (such as WinRAR, AnyDesk and PsExec) are legitimate and common, so their names are
+not listed as file-name rows, and the hunt guide describes them in words. Where the advisory ties a tool to a specific
+hash or behaviour, a row says so (for example SP-0013, SP-0040, SP-0041 and SP-0043).
 
 ## Read the results carefully
 
@@ -57,11 +58,12 @@ listed as rows, because they are legitimate and common.
   address ranges suggests a few belong to services many ordinary people use (the rows say which). The agencies also
   warn that an address used for harm at one time can later be reassigned to harmless services. Look each one up
   against your own logs first.
-- **We left out everyday tools on purpose.** The advisory lists tools such as WinRAR, AnyDesk, PsExec and a network
-  scanner because the group used them. They are legitimate and common. Listing them as indicators would bury a real
-  result in false alarms, so the hunt guide describes them in words instead.
+- **We left out everyday tools' names as file-name rows on purpose.** The advisory lists tools such as WinRAR,
+  AnyDesk, PsExec and a network scanner because the group used them. They are legitimate and common. Listing their
+  names as file-name indicators would bury a real result in false alarms, so the hunt guide describes them in words.
+  A few rows do tie a tool to a hash or a behaviour (for example SP-0013, SP-0040, SP-0041 and SP-0043).
 - **The advisory is one source.** Every row comes from it, so no row is marked verified. We mark a row verified only
-  when two independent sources report it.
+  when two or more independent sources report it.
 - **These indicators go stale quickly.** The agencies observed them between November 2024 and August 2026. File names
   and hashes are cheap for an attacker to change, so a clean result is not an all-clear.
 - **There is more in the advisory than we copy.** It names exploited flaws in internet-facing equipment, a mapping of
@@ -79,7 +81,7 @@ listed as rows, because they are legitimate and common.
 | `match` | `exact` or `wildcard` |
 | `evidence` | Where it would show: `network`, `file`, `process` or `event-log` |
 | `fragile` | `yes` if the attacker can change it trivially |
-| `verified` | `yes` only when two independent primary sources report it. `no` means a single source |
+| `verified` | `yes` only when two or more independent primary sources report it. `no` means a single source |
 | `source_url`, `source_date` | Where we took it from and the date of that source |
 | `fetched`, `review_by` | When we read it, and when it should be re-checked. Addresses and hostnames have short review dates |
 | `notes` | Context and caveats. Sentences starting "Our note" are ours, not the agencies' |

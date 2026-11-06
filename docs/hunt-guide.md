@@ -54,7 +54,7 @@ How to read a match:
 Search for the file names in the dataset. This lists matches without changing anything:
 
 ```
-Get-ChildItem -Path C:\ -Recurse -Force -ErrorAction SilentlyContinue -Include dcsync.exe,ShareFinder.ps1,SharpShares.exe,Socks.exe,Socks_werfault.exe,locker.dll,libsmb2.dll,portable.dat,netscanNEW.zip,DYRasWtb.exe,'Libwa*.dll','wa_3rd_party_host_*.exe','*.SafePay' | Select-Object FullName, Length, LastWriteTime
+Get-ChildItem -Path C:\ -Recurse -Force -ErrorAction SilentlyContinue -Include dcsync.exe,ShareFinder.ps1,SharpShares.exe,Socks.exe,Socks_werfault.exe,locker.dll,libsmb2.dll,portable.dat,netscanNEW.zip,DYRasWtb.exe,'1 - Copy.bat','Libwa*.dll','wa_3rd_party_host_*.exe','*.SafePay' | Select-Object FullName, Length, LastWriteTime
 ```
 
 If a file turns up, work out its hash and compare it with the `sha1` and `sha256` rows:
@@ -69,8 +69,9 @@ How to read it:
 - `libsmb2.dll` is also the name of a real open-source library, and `1 - Copy.bat` is the name Windows gives a copy of
   a file called `1.bat`. Check the location, the date and what installed the file.
 - The advisory also lists tools the group used that are common and legitimate: PsExec, WinRM, WinRAR, 7-Zip, FileZilla,
-  WinSCP, rclone, Mimikatz, NetExec, a disk-management tool, and a system cleaner. We did not list them as indicators.
-  Ask whether anyone at your company installed them.
+  WinSCP, rclone, Mimikatz, NetExec, a disk-management tool, and a system cleaner. We did not list their names as file-name indicators. Two rows
+  tie some of them to a hash or a behaviour: SP-0013 (NetExec) and SP-0043 (rclone and WinSCP). AnyDesk, TeamViewer
+  and ScreenConnect are covered in section 6. Ask whether anyone at your company installed them.
 
 ## 4. Accounts and sign-ins
 

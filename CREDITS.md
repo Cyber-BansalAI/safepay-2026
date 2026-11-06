@@ -15,7 +15,7 @@ more than we reproduce, follow the link for the full, current version.
 
 CISA states that content on its site is TLP:CLEAR unless labelled otherwise, which means it may be shared without
 restriction, subject to copyright controls (https://www.cisa.gov/notification). We record the notice and our reading of
-it in our internal source register.
+it in our own source notes.
 
 ## Further detail published by the same advisory (linked, not reproduced)
 

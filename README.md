@@ -25,6 +25,30 @@ on the SOC-Lite blog. It gives four questions to put to your IT person or provid
 | [`CREDITS.md`](CREDITS.md) | The agencies whose advisory this is built from, and what we took from it |
 | [`DISCLAIMER.md`](DISCLAIMER.md) | The full disclaimer |
 
+## Where the indicators come from
+
+**Rows:** 44 · **verified (two or more sources):** 0 · **single source:** 44
+
+These counts match [`iocs/iocs.csv`](iocs/iocs.csv); a test checks them every time we change the file. Every value
+was read on the advisory's own page. One source means no row is verified yet. The full list of what we took, and the
+exact wording, is in [CREDITS.md](CREDITS.md).
+
+### Copied into `iocs.csv` (indicator values, with credit)
+
+| Source | Rows | Rows by type | What we took | Link |
+|---|---|---|---|---|
+| **CISA and partner agencies (advisory AA26-293A)** | 44 | 9 ip, 4 hostname, 14 filename, 4 sha1, 6 sha256, 7 behaviour | The indicator tables: addresses, file names, hashes, host names, and how the group works | https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a |
+| **Total** | 44 | | | |
+
+### Linked, not copied
+
+| Source | What it has | Why we link | Link |
+|---|---|---|---|
+| **The advisory itself** | Machine-readable STIX files of the indicators, the list of exploited flaws, a mapping of the group's methods, and mitigations | It is the agencies' own, current copy. If you load indicators into a security tool, take them from there | https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a |
+
+Everyday tools the advisory lists (such as WinRAR, AnyDesk and PsExec) are described in words in the hunt guide, not
+listed as rows, because they are legitimate and common.
+
 ## Read the results carefully
 
 - **A match is a reason to look, not a verdict.** The advisory says several listed files are legitimate tools, and
